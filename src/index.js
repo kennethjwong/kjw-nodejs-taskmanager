@@ -5,11 +5,12 @@ const taskRouter = require("./routers/task");
 
 const app = express();
 const port = process.env.PORT;
+const user = process.env.user;
 
 app.use(express.json());
 app.use(userRouter);
 app.use(taskRouter);
 
 app.listen(port, () => {
-  console.log(`console is up and running on port ${port}`);
+  console.log(`console is up and running on port ${port} as ${user}`);
 });
